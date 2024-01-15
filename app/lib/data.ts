@@ -22,11 +22,11 @@ export async function fetchRevenue() {
     // Don't do this in production :)
 
     console.log('Fetching revenue data...');
-    await new Promise((resolve) => setTimeout(resolve, 1000*3*3));
+    //await new Promise((resolve) => setTimeout(resolve, 1000*3*3));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    console.log('Data fetch completed after 3 seconds.');
+    //console.log('Data fetch completed after 3 seconds.');
 
     return data.rows;
   } catch (error) {
@@ -39,7 +39,7 @@ export async function fetchLatestInvoices() {
   noStore();
   try {
 
-    await new Promise((resolve) => setTimeout(resolve, 1000*3));
+    //await new Promise((resolve) => setTimeout(resolve, 1000*3));
 
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
